@@ -1,14 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Card from './components/Card';
+import Home from './components/Home';
 
 function App() {
   return (
-    <div className="">
+    <Router>
       <Navbar />
-      <Card />
-    </div>
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='search/:value' element={<Card />}/>
+      </Routes>
+    </Router>
   );
 }
 
