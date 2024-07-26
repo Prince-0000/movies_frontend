@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
   };
-
+  const location = useLocation();
+  const isHomeRoute = location.pathname === "/";
   return (
     <div className="text-white flex justify-between sticky top-0 z-50 bg-black items-center h-24 max-w-full mx-auto px-4">
       <h1>
@@ -15,15 +17,17 @@ const Navbar = () => {
           alt="Home"
           className="w-full md:text-3xl sm:text-2xl text-xl font-bold text-[#00df9a]"
         >
-            FILMY
+            FILM FUSION
         </a>
       </h1>
       
-      <ul className="hidden md:flex">
-        <li className="p-4 mr-5 font-bold">
-          <a href='/'>Home</a>
-        </li>
-      </ul>
+      {!isHomeRoute && (
+        <ul className="hidden md:flex">
+          <li className="p-4 mr-5 font-bold">
+            <a href='/'>Home</a>
+          </li>
+        </ul>
+      )}
       <div onClick={handleNav} className="cursor-pointer md:hidden block">
         {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>
