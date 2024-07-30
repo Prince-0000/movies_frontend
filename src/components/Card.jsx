@@ -10,7 +10,7 @@ const Card = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/recommend/movies?input=${value}`
+          `https://kwxhpfo.localto.net/recommend/movies?input=${value}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
