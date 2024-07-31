@@ -10,9 +10,16 @@ const Card = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://kwxhpfo.localto.net/recommend/movies?input=${value}`
+          `https://kwxhpfo.localto.net/recommend/movies?input=${value}`,{
+            headers:{
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            }
+          }
+          
         );
         if (!response.ok) {
+          console.log("something is not ok")
           throw new Error("Network response was not ok");
         }
 
