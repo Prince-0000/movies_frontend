@@ -1,12 +1,7 @@
-import React, { useState } from "react";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import React from 'react';
 import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
-  const handleNav = () => {
-    setNav(!nav);
-  };
   const location = useLocation();
   const isHomeRoute = location.pathname === "/";
   return (

@@ -10,11 +10,15 @@ const Card = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://kwxhpfo.localto.net/recommend/movies?input=${value}`,{
+          `https://filmfusion.xyz/recommend/movies?input=${value}`,{
             headers:{
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            }
+              'Content-Type': 'application/json',
+              // 'localtonet-skip-warning':100,
+              // 'Cookie':'localtonet-skip-warning=true',
+              // 'Host': 'kwxhpfo.localto.net',
+              // 'ngrok-skip-browser-warning':'69420'
+            },
+            // credentials:'include'
           }
           
         );
