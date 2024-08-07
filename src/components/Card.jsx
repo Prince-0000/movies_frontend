@@ -13,12 +13,7 @@ const Card = () => {
           `https://filmfusion.xyz/recommend/movies?input=${value}`,{
             headers:{
               'Content-Type': 'application/json',
-              // 'localtonet-skip-warning':100,
-              // 'Cookie':'localtonet-skip-warning=true',
-              // 'Host': 'kwxhpfo.localto.net',
-              // 'ngrok-skip-browser-warning':'69420'
             },
-            // credentials:'include'
           }
           
         );
@@ -48,10 +43,10 @@ const Card = () => {
       ) : (
         <div className="items-center justify-center ml-10">
           <h2 className="text-xl my-5">
-            Recommended movies similar to{" "}
-            <span className="font-bold">{value}</span>
+            Recommended movies for you similar to{" "}
+            <span className="font-bold">{`'${value}'`}</span>
           </h2>
-          <div className="">
+          <div className="pb-10">
             {data?.map((value, index) => (
               <li key={index}>{value}</li>
             ))}
